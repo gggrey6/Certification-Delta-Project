@@ -1,0 +1,57 @@
+﻿year,section,characteristic,level,full_time_workers_thousands,median_weekly_earnings_total,median_weekly_earnings_with_cert_or_license_total,median_weekly_earnings_cert_only,median_weekly_earnings_with_license,median_weekly_earnings_without_cert_or_license
+2016,Age and Sex,"Total, 16 years and over",0,111091,832,1032,1089,1026,765
+2016,Age and Sex,16 to 24 years,1,10076,501,588,577,590,492
+2016,Age and Sex,25 to 54 years,1,78392,871,1035,1127,1025,804
+2016,Age and Sex,25 to 34 years,2,27456,751,890,899,889,713
+2016,Age and Sex,35 to 44 years,2,25284,934,1120,1244,1101,860
+2016,Age and Sex,45 to 54 years,2,25652,955,1145,1227,1137,890
+2016,Age and Sex,55 years and over,1,22624,939,1167,1199,1165,864
+2016,Age and Sex,55 to 64 years,2,18496,952,1171,1217,1170,881
+2016,Age and Sex,65 years and over,2,4128,866,1138,1156,1137,788
+2016,Age and Sex,"Men, 16 years and over",0,61930,915,1144,1197,1137,848
+2016,Age and Sex,16 to 24 years,1,5646,512,608,673,601,505
+2016,Age and Sex,25 to 54 years,1,43965,943,1142,1216,1133,886
+2016,Age and Sex,55 years and over,1,12319,1082,1297,1367,1286,1004
+2016,Age and Sex,"Women, 16 years and over",0,49161,749,945,928,947,684
+2016,Age and Sex,16 to 24 years,1,4430,486,571,517,579,473
+2016,Age and Sex,25 to 54 years,1,34427,778,955,978,953,717
+2016,Age and Sex,55 years and over,1,10304,801,1055,960,1063,735
+2016,Race and Hispanic or Latino Ethnicity,"White, 16 years and over",0,86474,862,1062,1118,1057,785
+2016,Race and Hispanic or Latino Ethnicity,Men,1,49310,942,1164,1203,1159,873
+2016,Race and Hispanic or Latino Ethnicity,Women,1,37163,766,970,965,971,696
+2016,Race and Hispanic or Latino Ethnicity,"Black or African American, 16 years and over",0,13963,678,797,806,796,642
+2016,Race and Hispanic or Latino Ethnicity,Men,1,6728,718,883,898,881,679
+2016,Race and Hispanic or Latino Ethnicity,Women,1,7235,641,748,737,749,613
+2016,Race and Hispanic or Latino Ethnicity,"Asian, 16 years and over",0,7030,1021,1250,1469,1222,962
+2016,Race and Hispanic or Latino Ethnicity,Men,1,3888,1151,1391,1661,1341,1125
+2016,Race and Hispanic or Latino Ethnicity,Women,1,3142,902,1158,1157,1158,809
+2016,Race and Hispanic or Latino Ethnicity,"Hispanic or Latino Ethnicity, 16 years and over",0,18950,624,884,917,880,600
+2016,Race and Hispanic or Latino Ethnicity,Men,1,11666,663,972,1006,959,626
+2016,Race and Hispanic or Latino Ethnicity,Women,1,7284,586,793,728,801,549
+2016,Educational Attainment,"Total, 25 years and over",0,101015,885,1064,1137,1056,816
+2016,Educational Attainment,Less than a high school diploma,1,7108,504,620,686,617,498
+2016,Educational Attainment,"High school graduates, no college ³",1,25475,692,795,869,786,676
+2016,Educational Attainment,Some college or associate degree,1,27307,779,849,910,838,760
+2016,Educational Attainment,"Some college, no degree",2,16056,756,794,888,778,746
+2016,Educational Attainment,Associate degree,2,11251,819,898,934,894,786
+2016,Educational Attainment,Bachelor's degree and higher,1,41125,1259,1296,1480,1272,1242
+2016,Educational Attainment,Bachelor's degree only,2,25503,1156,1163,1400,1143,1153
+2016,Educational Attainment,Advanced degree ⁴,2,15622,1444,1428,1610,1416,1465
+2016,Educational Attainment,"Men, 25 years and over",0,56284,969,1167,1241,1160,910
+2016,Educational Attainment,Less than a high school diploma,1,4904,551,718,757,714,531
+2016,Educational Attainment,"High school graduates, no college ³",1,15619,769,919,950,915,742
+2016,Educational Attainment,Some college or associate degree,1,14383,896,980,1026,973,865
+2016,Educational Attainment,"Some college, no degree",2,8738,861,935,1000,923,835
+2016,Educational Attainment,Associate degree,2,5646,951,1023,1046,1019,919
+2016,Educational Attainment,Bachelor's degree and higher,1,21378,1464,1517,1680,1487,1442
+2016,Educational Attainment,Bachelor's degree only,2,13516,1348,1365,1551,1339,1341
+2016,Educational Attainment,Advanced degree ⁴,2,7862,1707,1704,1884,1663,1710
+2016,Educational Attainment,"Women, 25 years and over",0,44731,784,971,973,971,722
+2016,Educational Attainment,Less than a high school diploma,1,2204,423,484,NA,481,420
+2016,Educational Attainment,"High school graduates, no college ³",1,9856,599,620,684,617,595
+2016,Educational Attainment,Some college or associate degree,1,12924,688,729,751,726,673
+2016,Educational Attainment,"Some college, no degree",2,7319,665,654,742,641,668
+2016,Educational Attainment,Associate degree,2,5606,720,788,762,791,683
+2016,Educational Attainment,Bachelor's degree and higher,1,19747,1101,1162,1237,1159,1029
+2016,Educational Attainment,Bachelor's degree only,2,11987,994,1047,1167,1033,966
+2016,Educational Attainment,Advanced degree ⁴,2,7760,1257,1276,1283,1276,1231

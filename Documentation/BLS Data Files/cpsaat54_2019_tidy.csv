@@ -1,0 +1,57 @@
+﻿year,section,characteristic,level,full_time_workers_thousands,median_weekly_earnings_total,median_weekly_earnings_with_cert_or_license_total,median_weekly_earnings_cert_only,median_weekly_earnings_with_license,median_weekly_earnings_without_cert_or_license
+2019,Age and Sex,"Total, 16 years and over",0,117584,917,1135,1226,1129,852
+2019,Age and Sex,16 to 24 years,1,10766,581,679,693,677,567
+2019,Age and Sex,25 to 54 years,1,81748,958,1144,1263,1136,895
+2019,Age and Sex,25 to 34 years,2,29576,846,994,1030,992,799
+2019,Age and Sex,35 to 44 years,2,26783,1035,1232,1411,1213,968
+2019,Age and Sex,45 to 54 years,2,25390,1033,1247,1365,1238,963
+2019,Age and Sex,55 years and over,1,25070,1001,1237,1301,1233,935
+2019,Age and Sex,55 to 64 years,2,20065,1017,1243,1394,1236,953
+2019,Age and Sex,65 years and over,2,5004,936,1173,1030,1203,858
+2019,Age and Sex,"Men, 16 years and over",0,65007,1007,1254,1374,1243,945
+2019,Age and Sex,16 to 24 years,1,5936,607,716,759,709,599
+2019,Age and Sex,25 to 54 years,1,45347,1045,1262,1433,1244,987
+2019,Age and Sex,55 years and over,1,13724,1150,1384,1387,1383,1083
+2019,Age and Sex,"Women, 16 years and over",0,52577,821,1029,1016,1029,749
+2019,Age and Sex,16 to 24 years,1,4830,540,644,622,647,520
+2019,Age and Sex,25 to 54 years,1,36401,864,1049,1031,1050,783
+2019,Age and Sex,55 years and over,1,11346,868,1113,1202,1105,794
+2019,Race and Hispanic or Latino Ethnicity,"White, 16 years and over",0,90194,945,1156,1232,1151,877
+2019,Race and Hispanic or Latino Ethnicity,Men,1,51110,1036,1290,1389,1274,974
+2019,Race and Hispanic or Latino Ethnicity,Women,1,39084,840,1047,1013,1050,759
+2019,Race and Hispanic or Latino Ethnicity,"Black or African American, 16 years and over",0,15460,735,903,971,896,701
+2019,Race and Hispanic or Latino Ethnicity,Men,1,7378,769,982,1048,968,739
+2019,Race and Hispanic or Latino Ethnicity,Women,1,8081,704,866,895,862,667
+2019,Race and Hispanic or Latino Ethnicity,"Asian, 16 years and over",0,7898,1174,1430,1713,1396,1131
+2019,Race and Hispanic or Latino Ethnicity,Men,1,4334,1336,1548,1868,1469,1272
+2019,Race and Hispanic or Latino Ethnicity,Women,1,3563,1025,1361,1399,1357,938
+2019,Race and Hispanic or Latino Ethnicity,"Hispanic or Latino Ethnicity, 16 years and over",0,21227,706,960,950,960,678
+2019,Race and Hispanic or Latino Ethnicity,Men,1,12611,747,1054,1107,1048,718
+2019,Race and Hispanic or Latino Ethnicity,Women,1,8616,642,859,768,872,610
+2019,Educational Attainment,"Total, 25 years and over",0,106818,969,1160,1267,1152,904
+2019,Educational Attainment,Less than a high school diploma,1,7011,592,712,751,709,585
+2019,Educational Attainment,"High school graduates, no college ³",1,26756,746,853,898,846,733
+2019,Educational Attainment,Some college or associate degree,1,27279,856,927,977,921,830
+2019,Educational Attainment,"Some college, no degree",2,15581,833,904,972,894,815
+2019,Educational Attainment,Associate degree,2,11698,887,950,983,947,858
+2019,Educational Attainment,Bachelor's degree and higher,1,45772,1367,1393,1663,1370,1354
+2019,Educational Attainment,Bachelor's degree only,2,28313,1248,1253,1565,1228,1246
+2019,Educational Attainment,Advanced degree ⁴,2,17460,1567,1539,1854,1520,1595
+2019,Educational Attainment,"Men, 25 years and over",0,59070,1070,1289,1418,1270,1004
+2019,Educational Attainment,Less than a high school diploma,1,4749,644,802,832,801,632
+2019,Educational Attainment,"High school graduates, no college ³",1,16428,844,1004,997,1006,818
+2019,Educational Attainment,Some college or associate degree,1,14648,991,1092,1183,1083,961
+2019,Educational Attainment,"Some college, no degree",2,8698,967,1080,1203,1062,939
+2019,Educational Attainment,Associate degree,2,5950,1023,1102,1149,1098,996
+2019,Educational Attainment,Bachelor's degree and higher,1,23246,1573,1651,1890,1610,1551
+2019,Educational Attainment,Bachelor's degree only,2,14731,1442,1461,1767,1422,1435
+2019,Educational Attainment,Advanced degree ⁴,2,8515,1878,1885,2024,1874,1871
+2019,Educational Attainment,"Women, 25 years and over",0,47747,865,1060,1073,1059,786
+2019,Educational Attainment,Less than a high school diploma,1,2262,494,519,NA,515,493
+2019,Educational Attainment,"High school graduates, no college ³",1,10328,633,664,689,661,629
+2019,Educational Attainment,Some college or associate degree,1,12631,737,786,807,784,722
+2019,Educational Attainment,"Some college, no degree",2,6883,717,731,742,731,714
+2019,Educational Attainment,Associate degree,2,5748,763,829,849,828,734
+2019,Educational Attainment,Bachelor's degree and higher,1,22526,1195,1256,1401,1249,1153
+2019,Educational Attainment,Bachelor's degree only,2,13582,1100,1145,1364,1135,1066
+2019,Educational Attainment,Advanced degree ⁴,2,8944,1365,1369,1525,1366,1360

@@ -1,0 +1,57 @@
+﻿year,section,characteristic,level,full_time_workers_thousands,median_weekly_earnings_total,median_weekly_earnings_with_cert_or_license_total,median_weekly_earnings_cert_only,median_weekly_earnings_with_license,median_weekly_earnings_without_cert_or_license
+2015,Age and Sex,"Total, 16 years and over",0,109080,809,1004,1052,998,747
+2015,Age and Sex,16 to 24 years,1,9790,487,549,590,539,480
+2015,Age and Sex,25 to 54 years,1,77105,845,1002,1064,995,780
+2015,Age and Sex,25 to 34 years,2,26611,735,881,912,877,690
+2015,Age and Sex,35 to 44 years,2,24917,900,1069,1172,1055,831
+2015,Age and Sex,45 to 54 years,2,25577,923,1111,1162,1100,862
+2015,Age and Sex,55 years and over,1,22186,916,1155,1201,1150,836
+2015,Age and Sex,55 to 64 years,2,18108,927,1161,1224,1155,847
+2015,Age and Sex,65 years and over,2,4078,873,1134,1127,1135,785
+2015,Age and Sex,"Men, 16 years and over",0,60746,895,1122,1176,1108,829
+2015,Age and Sex,16 to 24 years,1,5476,510,603,656,596,503
+2015,Age and Sex,25 to 54 years,1,43192,921,1111,1182,1093,866
+2015,Age and Sex,55 years and over,1,12078,1054,1269,1336,1258,985
+2015,Age and Sex,"Women, 16 years and over",0,48334,726,923,886,926,659
+2015,Age and Sex,16 to 24 years,1,4314,450,500,488,501,436
+2015,Age and Sex,25 to 54 years,1,33912,757,928,902,931,693
+2015,Age and Sex,55 years and over,1,10108,774,1035,999,1040,704
+2015,Race and Hispanic or Latino Ethnicity,"White, 16 years and over",0,85443,835,1026,1071,1020,765
+2015,Race and Hispanic or Latino Ethnicity,Men,1,48746,920,1143,1199,1136,855
+2015,Race and Hispanic or Latino Ethnicity,Women,1,36698,743,943,910,945,669
+2015,Race and Hispanic or Latino Ethnicity,"Black or African American, 16 years and over",0,13587,641,768,744,771,614
+2015,Race and Hispanic or Latino Ethnicity,Men,1,6445,680,830,826,830,643
+2015,Race and Hispanic or Latino Ethnicity,Women,1,7142,615,724,652,734,589
+2015,Race and Hispanic or Latino Ethnicity,"Asian, 16 years and over",0,6638,993,1238,1400,1185,926
+2015,Race and Hispanic or Latino Ethnicity,Men,1,3684,1129,1375,1497,1350,1077
+2015,Race and Hispanic or Latino Ethnicity,Women,1,2954,877,1136,1336,1125,774
+2015,Race and Hispanic or Latino Ethnicity,"Hispanic or Latino Ethnicity, 16 years and over",0,18311,604,822,823,822,580
+2015,Race and Hispanic or Latino Ethnicity,Men,1,11142,631,898,913,890,605
+2015,Race and Hispanic or Latino Ethnicity,Women,1,7168,566,751,655,765,528
+2015,Educational Attainment,"Total, 25 years and over",0,99291,860,1030,1096,1022,793
+2015,Educational Attainment,Less than a high school diploma,1,7289,493,596,627,593,488
+2015,Educational Attainment,"High school graduates, no college ³",1,25221,678,772,851,761,662
+2015,Educational Attainment,Some college or associate degree,1,26801,762,825,836,823,742
+2015,Educational Attainment,"Some college, no degree",2,15894,738,787,804,783,725
+2015,Educational Attainment,Associate degree,2,10908,798,855,880,853,770
+2015,Educational Attainment,Bachelor's degree and higher,1,39979,1230,1256,1459,1236,1205
+2015,Educational Attainment,Bachelor's degree only,2,25043,1137,1142,1369,1121,1135
+2015,Educational Attainment,Advanced degree ⁴,2,14937,1403,1387,1573,1369,1422
+2015,Educational Attainment,"Men, 25 years and over",0,55270,947,1145,1223,1136,890
+2015,Educational Attainment,Less than a high school diploma,1,5035,520,702,793,687,513
+2015,Educational Attainment,"High school graduates, no college ³",1,15316,759,882,915,872,735
+2015,Educational Attainment,Some college or associate degree,1,14109,883,957,990,949,857
+2015,Educational Attainment,"Some college, no degree",2,8741,850,923,926,923,823
+2015,Educational Attainment,Associate degree,2,5368,931,996,1076,983,907
+2015,Educational Attainment,Bachelor's degree and higher,1,20811,1420,1490,1628,1460,1391
+2015,Educational Attainment,Bachelor's degree only,2,13295,1304,1342,1544,1285,1288
+2015,Educational Attainment,Advanced degree ⁴,2,7516,1637,1631,1827,1609,1642
+2015,Educational Attainment,"Women, 25 years and over",0,44020,761,947,917,949,696
+2015,Educational Attainment,Less than a high school diploma,1,2255,418,439,NA,427,417
+2015,Educational Attainment,"High school graduates, no college ³",1,9905,586,595,634,591,585
+2015,Educational Attainment,Some college or associate degree,1,12692,664,715,689,720,647
+2015,Educational Attainment,"Some college, no degree",2,7153,637,653,666,651,632
+2015,Educational Attainment,Associate degree,2,5539,703,766,706,773,668
+2015,Educational Attainment,Bachelor's degree and higher,1,19169,1064,1138,1233,1133,1003
+2015,Educational Attainment,Bachelor's degree only,2,11748,975,1016,1158,1005,954
+2015,Educational Attainment,Advanced degree ⁴,2,7420,1204,1239,1338,1235,1151

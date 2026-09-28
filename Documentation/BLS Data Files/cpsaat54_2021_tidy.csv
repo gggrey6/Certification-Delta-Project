@@ -1,0 +1,57 @@
+﻿year,section,characteristic,level,full_time_workers_thousands,median_weekly_earnings_total,median_weekly_earnings_with_cert_or_license_total,median_weekly_earnings_cert_only,median_weekly_earnings_with_license,median_weekly_earnings_without_cert_or_license
+2021,Age and Sex,"Total, 16 years and over",0,114316,998,1229,1288,1223,931
+2021,Age and Sex,16 to 24 years,1,10392,623,734,740,733,615
+2021,Age and Sex,25 to 54 years,1,79463,1045,1239,1309,1233,979
+2021,Age and Sex,25 to 34 years,2,28697,931,1065,1083,1064,892
+2021,Age and Sex,35 to 44 years,2,26449,1131,1339,1407,1331,1040
+2021,Age and Sex,45 to 54 years,2,24317,1154,1374,1490,1364,1066
+2021,Age and Sex,55 years and over,1,24461,1102,1346,1407,1340,1012
+2021,Age and Sex,55 to 64 years,2,19292,1132,1363,1419,1358,1037
+2021,Age and Sex,65 years and over,2,5169,994,1248,1338,1241,938
+2021,Age and Sex,"Men, 16 years and over",0,62928,1097,1357,1400,1352,1017
+2021,Age and Sex,16 to 24 years,1,5737,650,787,772,792,636
+2021,Age and Sex,25 to 54 years,1,43792,1144,1372,1452,1363,1076
+2021,Age and Sex,55 years and over,1,13399,1226,1453,1465,1452,1157
+2021,Age and Sex,"Women, 16 years and over",0,51388,912,1135,1150,1134,829
+2021,Age and Sex,16 to 24 years,1,4655,605,698,NA,701,593
+2021,Age and Sex,25 to 54 years,1,35671,954,1147,1152,1146,877
+2021,Age and Sex,55 years and over,1,11062,956,1235,1315,1230,873
+2021,Race and Hispanic or Latino Ethnicity,"White, 16 years and over",0,87738,1018,1250,1297,1246,949
+2021,Race and Hispanic or Latino Ethnicity,Men,1,49382,1125,1378,1398,1377,1043
+2021,Race and Hispanic or Latino Ethnicity,Women,1,38356,925,1154,1179,1153,835
+2021,Race and Hispanic or Latino Ethnicity,"Black or African American, 16 years and over",0,14740,801,1009,1075,1003,764
+2021,Race and Hispanic or Latino Ethnicity,Men,1,7099,825,1140,1281,1132,784
+2021,Race and Hispanic or Latino Ethnicity,Women,1,7641,776,937,819,941,743
+2021,Race and Hispanic or Latino Ethnicity,"Asian, 16 years and over",0,7780,1328,1483,1736,1470,1253
+2021,Race and Hispanic or Latino Ethnicity,Men,1,4259,1453,1743,1924,1668,1409
+2021,Race and Hispanic or Latino Ethnicity,Women,1,3520,1141,1347,1342,1348,1079
+2021,Race and Hispanic or Latino Ethnicity,"Hispanic or Latino Ethnicity, 16 years and over",0,20841,777,1040,1017,1045,742
+2021,Race and Hispanic or Latino Ethnicity,Men,1,12469,820,1147,1126,1148,785
+2021,Race and Hispanic or Latino Ethnicity,Women,1,8372,718,937,852,942,688
+2021,Educational Attainment,"Total, 25 years and over",0,103924,1057,1257,1332,1251,987
+2021,Educational Attainment,Less than a high school diploma,1,6033,626,765,756,768,621
+2021,Educational Attainment,"High school graduates, no college ³",1,24860,809,937,995,928,796
+2021,Educational Attainment,Some college or associate degree,1,25824,925,1002,1018,999,900
+2021,Educational Attainment,"Some college, no degree",2,14597,899,975,1027,966,882
+2021,Educational Attainment,Associate degree,2,11227,963,1023,1012,1024,928
+2021,Educational Attainment,Bachelor's degree and higher,1,47207,1452,1488,1674,1472,1433
+2021,Educational Attainment,Bachelor's degree only,2,28930,1334,1342,1564,1321,1331
+2021,Educational Attainment,Advanced degree ⁴,2,18277,1658,1628,1872,1611,1702
+2021,Educational Attainment,"Men, 25 years and over",0,57191,1160,1391,1455,1384,1099
+2021,Educational Attainment,Less than a high school diploma,1,4123,684,870,NA,877,677
+2021,Educational Attainment,"High school graduates, no college ³",1,15496,904,1069,1092,1066,882
+2021,Educational Attainment,Some college or associate degree,1,13775,1047,1155,1197,1150,1015
+2021,Educational Attainment,"Some college, no degree",2,8110,1010,1142,1233,1130,986
+2021,Educational Attainment,Associate degree,2,5665,1103,1163,1144,1165,1070
+2021,Educational Attainment,Bachelor's degree and higher,1,23798,1661,1744,1887,1733,1636
+2021,Educational Attainment,Bachelor's degree only,2,15069,1512,1540,1735,1519,1500
+2021,Educational Attainment,Advanced degree ⁴,2,8729,1910,1910,2093,1903,1910
+2021,Educational Attainment,"Women, 25 years and over",0,46733,954,1159,1178,1158,876
+2021,Educational Attainment,Less than a high school diploma,1,1910,550,610,NA,610,548
+2021,Educational Attainment,"High school graduates, no college ³",1,9364,698,706,764,700,697
+2021,Educational Attainment,Some college or associate degree,1,12049,803,870,848,872,783
+2021,Educational Attainment,"Some college, no degree",2,6487,779,793,808,790,776
+2021,Educational Attainment,Associate degree,2,5562,836,920,904,921,794
+2021,Educational Attainment,Bachelor's degree and higher,1,23409,1272,1352,1468,1346,1233
+2021,Educational Attainment,Bachelor's degree only,2,13861,1165,1221,1380,1206,1149
+2021,Educational Attainment,Advanced degree ⁴,2,9548,1460,1470,1542,1465,1448
