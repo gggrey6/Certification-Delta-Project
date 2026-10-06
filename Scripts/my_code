@@ -1,0 +1,153 @@
+Everything from line 4 to line 47 is the code related to BLS | Our September 30th Meeting 
+
+#this is where I'm going to try and see if there are any interesting trends within the correlation between characteristics and certifications. I will be merging 5 data sets together to see if there is anything of use out of those. The data I'm using is Table 54 from the BLS data that is showing: Median weekly earnings of full-time wage and salary workers by certification and licensing status and selected characteristics# 
+
+#this is me trying to figure out how to merge the data sets
+data2015w_sect <- read.csv("BLS Table [54]/cpsaat54_2015_tidy.csv")
+data2016w_sect <- read.csv("BLS Table [54]/cpsaat54_2016_tidy.csv")
+data2017w_sect <- read.csv("BLS Table [54]/cpsaat54_2017_tidy.csv")
+data2018w_sect <- read.csv("BLS Table [54]/cpsaat54_2018_tidy.csv")
+data2019w_sect <- read.csv("BLS Table [54]/cpsaat54_2019_tidy.csv")
+data2020w_sect <- read.csv("BLS Table [54]/cpsaat54_2020_tidy.csv")
+data2021w_sect <- read.csv("BLS Table [54]/cpsaat54_2021_tidy.csv")
+data2022w_sect <- read.csv("BLS Table [54]/cpsaat54_2022_tidy.csv")
+data2023w_sect <- read.csv("BLS Table [54]/cpsaat54_2023_tidy.csv")
+data2024w_sect <- read.csv("BLS Table [54]/cpsaat54_2024_tidy.csv")
+data2025w_sect <- read.csv("BLS Table [54]/cpsaat54_2025_tidy.csv")
+
+
+#trying to merge the data sets together#
+library(dplyr)
+combined_data <- bind_rows(data2015w_sect, data2016w_sect, data2017w_sect, data2018w_sect, data2019w_sect, data2020w_sect, data2021w_sect, data2022w_sect, data2023w_sect, data2024w_sect, data2025w_sect)
+
+#me trying to figure out how to create graphs to show trends# 
+
+trend <- combined_data[combined_data$section == "Age and Sex" &
+                   combined_data$characteristic == "Total, 16 years and over", ]
+
+plot(trend$year, trend$median_weekly_earnings_cert_only,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(trend$median_weekly_earnings_cert_only,
+                     trend$median_weekly_earnings_without_cert_or_license)),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Median Weekly Earnings, 2015–2025")
+
+lines(trend$year, trend$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("Certification Only", "Without Certification or License"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+#trying to see if the earnings gap is generally significant for general trends# 
+trend$earnings_gap <- trend$median_weekly_earnings_cert_only - trend$median_weekly_earnings_without_cert_or_license
+
+cor(trend$year, trend$earnings_gap)
+model <- lm(earnings_gap ~ year, data = trend)
+summary(model)
+
+
+Everything from line 52 to line 152 is the code related to CPS | Our October 6th Meeting 
+
+#I've decided to create 9 separate parquet files and combine them, 
+#because for some reason when I download multiple years only the first year shows up, so everything below is just the same code for different years#
+
+#this is the file for 2016
+cps2016 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2016.csv")
+write_parquet(cps2016, "cps.parquet")
+  cps2016 <- read_parquet("cps.parquet")
+
+#this is the file for 2017
+cps2017 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2017.csv")
+write_parquet(cps2017, "cps.parquet2017")
+  cps2017 <- read_parquet("cps.parquet2017")
+
+#this is the file for 2018
+cps2018 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2018.csv")
+write_parquet(cps2018, "cps.parquet2018")
+  cps2018 <- read_parquet("cps.parquet2018")
+
+#this is the file for 2019
+cps2019 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2019.csv")
+write_parquet(cps2019, "cps.parquet2019")
+  cps2019 <- read_parquet("cps.parquet2019")
+
+#this is the file for 2020
+cps2020 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2020.csv")
+write_parquet(cps2020, "cps.parquet2020")
+  cps2020 <- read_parquet("cps.parquet2020")
+
+#this is the file for 2021
+cps2021 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2021.csv")
+write_parquet(cps2021, "cps.parquet2021")
+  cps2021 <- read_parquet("cps.parquet2021")
+
+#this is the file for 2022
+cps2022 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2022.csv")
+write_parquet(cps2022, "cps.parquet2022")
+  cps2022 <- read_parquet("cps.parquet2022")
+
+#this is the file for 2023
+cps2023 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2023.csv")
+write_parquet(cps2023, "cps.parquet2023")
+  cps2023 <- read_parquet("cps.parquet2023")
+
+#this is the file for 2024
+cps2024 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2024.csv")
+write_parquet(cps2024, "cps.parquet2024")
+  cps2024 <- read_parquet("cps.parquet2024")
+
+#this is the file for 2025
+cps2025 <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_2025.csv")
+write_parquet(cps2025, "cps.parquet2025")
+  cps2025 <- read_parquet("cps.parquet2025")
+  
+#this is my dataset#
+
+library(dplyr)
+cps_all <- bind_rows(
+  cps2016, cps2017, cps2018, cps2019, cps2020,
+  cps2021, cps2022, cps2023, cps2024, cps2025
+)
+
+
+
+```
+
+```{r}
+
+#this is where I'm testing the relationships between variables, so anything below this comment will be related to that#
+
+#I will first be testing the relationship between hourly earnings and having a certification. I just want to see the general relationship at first and then will add CLASSWKR after. I'm also only using one year of data for now just to see if any relationship between variables even exists, this is only a starting point.  
+
+cps2016$HOURWAGE2[cps2016$HOURWAGE2 == 999.99] <- NA
+cps2016$cert2 <- as.numeric(cps2016$PROFCERT == 2) #I created cert2 the variable because PROFCERT is inherently a category variable, so when PROFCERT equals 2 that means the indvidiual has a certificate 
+
+gen_earnings_relationship <- lm(HOURWAGE2 ~ cert2, data = cps2016)
+summary(gen_earnings_relationship)
+
+#Now I'm going to see the relationship between different classes of workers and having a certificate, 
+#I converted CLASSWKR into a factor to help with future stats tests as CLASSWKR is actually a categorical variable. 
+cps2016$HOURWAGE2[cps2016$HOURWAGE2 == 999.99] <- NA #because anything above 999.9 is NIU (Not in universe)
+
+model_with <- lm(HOURWAGE2 ~ cert2 + CLASSWKR, data = cps2016)
+model_without <- update(model_with, . ~ . - CLASSWKR)
+
+anova(model_without, model_with)
+
+#I want to see if WKSTAT might be significant to the conversation or not
+cps2016$WKSTAT <- as.factor(cps2016$WKSTAT)
+model_with_wkstat <- lm(HOURWAGE2 ~ cert2 + CLASSWKR + WKSTAT, data = cps2016)
+model_without_wkstat <- update(model_with_wkstat, . ~ . - WKSTAT)
+
+anova(model_without_wkstat, model_with_wkstat)
+
+#doing analysis to show a possible relationship between having a certificate and employment 
+labor_force <- subset(cps2016, EMPSTAT %in% c(10, 12, 21, 22)) #10 in the codebook signifies employed, 12 in the codebook signifies has a job but hasn't worked in a week (so still employed), 21 and 22 are both considered unemployed (but still in the labor force)
+
+labor_force$employed <- ifelse(labor_force$EMPSTAT %in% c(10, 12), 1, 0) #I did all of this because EMPSTAT was a categorical variable so if I kept it as a categorical variable it would mess up any further analysis. 
+
+model_full <- glm(employed ~ cert2 + EDUC + AGE + SEX, data = labor_force, family = "binomial") 
+#the demographic variables are held constant in this case, PROFCERT is the main variable
+summary(model_full)
+```
