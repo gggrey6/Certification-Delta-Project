@@ -1,0 +1,48 @@
+#this is where I'm going to try and see if there are any interesting trends within the correlation between characteristics and certifications. I will be merging 5 data sets together to see if there is anything of use out of those. The data I'm using is Table 54 from the BLS data that is showing: Median weekly earnings of full-time wage and salary workers by certification and licensing status and selected characteristics# 
+
+#this is me trying to figure out how to merge the data sets
+data2015w_sect <- read.csv("BLS Table [54]/cpsaat54_2015_tidy.csv")
+data2016w_sect <- read.csv("BLS Table [54]/cpsaat54_2016_tidy.csv")
+data2017w_sect <- read.csv("BLS Table [54]/cpsaat54_2017_tidy.csv")
+data2018w_sect <- read.csv("BLS Table [54]/cpsaat54_2018_tidy.csv")
+data2019w_sect <- read.csv("BLS Table [54]/cpsaat54_2019_tidy.csv")
+data2020w_sect <- read.csv("BLS Table [54]/cpsaat54_2020_tidy.csv")
+data2021w_sect <- read.csv("BLS Table [54]/cpsaat54_2021_tidy.csv")
+data2022w_sect <- read.csv("BLS Table [54]/cpsaat54_2022_tidy.csv")
+data2023w_sect <- read.csv("BLS Table [54]/cpsaat54_2023_tidy.csv")
+data2024w_sect <- read.csv("BLS Table [54]/cpsaat54_2024_tidy.csv")
+data2025w_sect <- read.csv("BLS Table [54]/cpsaat54_2025_tidy.csv")
+
+
+#trying to merge the data sets together#
+library(dplyr)
+combined_data <- bind_rows(data2015w_sect, data2016w_sect, data2017w_sect, data2018w_sect, data2019w_sect, data2020w_sect, data2021w_sect, data2022w_sect, data2023w_sect, data2024w_sect, data2025w_sect)
+
+#me trying to figure out how to create graphs to show trends# 
+
+trend <- combined_data[combined_data$section == "Age and Sex" &
+                   combined_data$characteristic == "Total, 16 years and over", ]
+
+plot(trend$year, trend$median_weekly_earnings_cert_only,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(trend$median_weekly_earnings_cert_only,
+                     trend$median_weekly_earnings_without_cert_or_license)),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Median Weekly Earnings, 2015–2025")
+
+lines(trend$year, trend$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("Certification Only", "Without Certification or License"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+#trying to see if the earnings gap is generally significant for general trends# 
+trend$earnings_gap <- trend$median_weekly_earnings_cert_only - trend$median_weekly_earnings_without_cert_or_license
+
+cor(trend$year, trend$earnings_gap)
+model <- lm(earnings_gap ~ year, data = trend)
+summary(model)
+
+
+
