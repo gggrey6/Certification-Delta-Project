@@ -1,4 +1,4 @@
-This is all code for CPS | Everything that I showed you in our October 6th Meeting 
+This is all code for CPS | All the code from line 3 till line 103 is code relevant to our September 30th Meeting
 
 #I've decided to create 9 separate parquet files and combine them, 
 #because for some reason when I download multiple years only the first year shows up, so everything below is just the same code for different years#
