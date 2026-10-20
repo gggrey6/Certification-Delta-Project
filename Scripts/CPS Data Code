@@ -100,5 +100,104 @@ labor_force$employed <- ifelse(labor_force$EMPSTAT %in% c(10, 12), 1, 0) #I did 
 
 model_full <- glm(employed ~ cert2 + EDUC + AGE + SEX, data = labor_force, family = "binomial") 
 #the demographic variables are held constant in this case, PROFCERT is the main variable
+
+
+
+Everything from Line 106 to Line 202 will be code that is relevant to our October 20th Meeting/occupational variables 
+
+#I'm going to attempt to do something with this OCC Variable
+
+cps2016_retry <- read.csv("C:/Users/Owner/OneDrive - University of Pittsburgh/RStudio/Intern/CPS Table/cps_00044.csv")
+
+library(dplyr)
+
+cps2016_retry <- cps2016_retry %>%
+  filter(OCC %in% c(6540, 7440, 6720, 6750, 8620, 7315))
+
+cps2016_envtrades <- cps2016_retry
+rm(cps2016_retry)
+
+cps2016_envtrades <- cps2016_envtrades %>%
+  filter(HOURWAGE2 != 999.99)
+  
+ write_xlsx(cps2016_envtrades, "cps2016_envtrades.xlsx")
+ 
+#creating a graph 
+library(dplyr)
+library(ggplot2)
+
+occ6720 <- cps2016_envtrades %>%
+  filter(OCC == 6720, PROFCERT %in% c(1, 2)) %>%
+  mutate(
+    HOURWAGE2 = as.numeric(HOURWAGE2),
+    EARNWT = as.numeric(EARNWT),
+    profcert_f = factor(as.numeric(PROFCERT),
+                        levels = c(1, 2),
+                        labels = c("No certification", "Has certification"))
+  ) %>%
+  filter(!is.na(EARNWT), EARNWT > 0) %>%
+  group_by(profcert_f) %>%
+  mutate(w = EARNWT / sum(EARNWT)) %>%
+  ungroup()
+
+ggplot(occ6720, aes(x = HOURWAGE2, color = profcert_f, fill = profcert_f, weight = w)) +
+  geom_density(linewidth = 1, alpha = 0.2) +
+  scale_x_continuous(breaks = seq(0, 60, by = 5)) +
+  labs(x = "Hourly wage ($)", y = "Density", color = NULL, fill = NULL,
+       title = "Hourly wage for Hazardous Materials Removal Workers") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+#creating another graph 
+library(dplyr)
+library(ggplot2)
+
+occ6750 <- cps2016_envtrades %>%
+  filter(OCC == 6750, PROFCERT %in% c(1, 2)) %>%
+  mutate(
+    HOURWAGE2 = as.numeric(HOURWAGE2),
+    EARNWT = as.numeric(EARNWT),
+    profcert_f = factor(as.numeric(PROFCERT),
+                        levels = c(1, 2),
+                        labels = c("No certification", "Has certification"))
+  ) %>%
+  filter(!is.na(EARNWT), EARNWT > 0) %>%
+  group_by(profcert_f) %>%
+  mutate(w = EARNWT / sum(EARNWT)) %>%
+  ungroup()
+
+ggplot(occ6750, aes(x = HOURWAGE2, color = profcert_f, fill = profcert_f, weight = w)) +
+  geom_density(linewidth = 1, alpha = 0.2) +
+  scale_x_continuous(breaks = seq(0, 60, by = 5)) +
+  labs(x = "Hourly wage ($)", y = "Density", color = NULL, fill = NULL,
+       title = "Hourly wage for Septic tank servicers and sewer pipe cleaners") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+#creating another graph 
+library(dplyr)
+library(ggplot2)
+
+occ8620 <- cps2016_envtrades %>%
+  filter(OCC == 8620, PROFCERT %in% c(1, 2)) %>%
+  mutate(
+    HOURWAGE2 = as.numeric(HOURWAGE2),
+    EARNWT = as.numeric(EARNWT),
+    profcert_f = factor(as.numeric(PROFCERT),
+                        levels = c(1, 2),
+                        labels = c("No certification", "Has certification"))
+  ) %>%
+  filter(!is.na(EARNWT), EARNWT > 0) %>%
+  group_by(profcert_f) %>%
+  mutate(w = EARNWT / sum(EARNWT)) %>%
+  ungroup()
+
+ggplot(occ8620, aes(x = HOURWAGE2, color = profcert_f, fill = profcert_f, weight = w)) +
+  geom_density(linewidth = 1, alpha = 0.2) +
+  scale_x_continuous(breaks = seq(0, 60, by = 5)) +
+  labs(x = "Hourly wage ($)", y = "Density", color = NULL, fill = NULL,
+       title = "Hourly wage for Septic tank servicers and sewer pipe cleaners") +
+  theme_minimal() +
+  theme(legend.position = "top")
 summary(model_full)
 ```
