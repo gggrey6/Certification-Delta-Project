@@ -46,5 +46,527 @@ cor(trend$year, trend$earnings_gap)
 model <- lm(earnings_gap ~ year, data = trend)
 summary(model)
 
+Everything from Line 49 to line 566 will be code that is specifically focused on the LinkedIn Series. It looks like a lot but it's just me using the same variation of code to make a lot of graphs 
+
+#this is me creating graphs for the gender graph LinkedIn Series# 
+
+#this is a graph that is visualizing men and women who don't have certifications#
+men <- combined_data[combined_data$section == "Age and Sex" &
+                     combined_data$characteristic == "Men, 16 years and over", ]
+
+women <- combined_data[combined_data$section == "Age and Sex" &
+                       combined_data$characteristic == "Women, 16 years and over", ]
+
+plot(men$year, men$median_weekly_earnings_without_cert_or_license,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(men$median_weekly_earnings_without_cert_or_license,
+                    women$median_weekly_earnings_without_cert_or_license),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Men vs. Women: Earnings Without Certification\n2015-2025")
+
+lines(women$year, women$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("Men", "Women"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+       
+#this is a graph of men and women with certifications# 
+
+plot(men$year, men$median_weekly_earnings_cert_only,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(men$median_weekly_earnings_cert_only,
+                    women$median_weekly_earnings_cert_only),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Men vs. Women: Earnings With a Certification\n2015-2025")
+
+lines(women$year, women$median_weekly_earnings_cert_only,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("Men", "Women"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+
+#this is a graph of men who don't have a certification and women who have a certification
+plot(men$year, men$median_weekly_earnings_without_cert_or_license,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(men$median_weekly_earnings_without_cert_or_license,
+                    women$median_weekly_earnings_cert_only),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Men Without vs. Women With a Certification\n2015-2025")
+
+lines(women$year, women$median_weekly_earnings_cert_only,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("Men", "Women"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+
+#this is the start of me making graphs related to race 
+
+#for this graph I will be comparing, white people who have certifications with minorities (black, asian, and hispanic people) who also have certifications 
+
+section_name <- "Race and Hispanic or Latino Ethnicity"
+
+White <- combined_data[combined_data$section == section_name &
+                       combined_data$characteristic == "White, 16 years and over", ]
+
+Black <- combined_data[combined_data$section == section_name &
+                       combined_data$characteristic == "Black or African American, 16 years and over", ]
+
+Asian <- combined_data[combined_data$section == section_name &
+                       combined_data$characteristic == "Asian, 16 years and over", ]
+
+Hispanic_Latino <- combined_data[combined_data$section == section_name &
+                                 combined_data$characteristic == "Hispanic or Latino Ethnicity, 16 years and over", ]
+
+col_name <- "median_weekly_earnings_cert_only"
+
+plot(White$year, White[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White[[col_name]],
+                    Black[[col_name]],
+                    Asian[[col_name]],
+                    Hispanic_Latino[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Earnings With a Certification by Race/Ethnicity\n2015-2025")
+
+lines(Black$year, Black[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian$year, Asian[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White", "Black", "Asian", "Hispanic or Latino"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16)
+       
+#this is now comparing if only white people didn't have a certification and minorities had a certification 
+plot(White$year, White$median_weekly_earnings_without_cert_or_license,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White$median_weekly_earnings_without_cert_or_license,
+                    Black[[col_name]],
+                    Asian[[col_name]],
+                    Hispanic_Latino[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "White (No Cert) vs. Others (Certified)\n2015-2025")
+
+lines(Black$year, Black[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian$year, Asian[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White", "Black", "Asian", "Hispanic or Latino"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16)
+       
+#Now I'm going to compare white women in the graph below, everyone will have a certification 
+section_name <- "Race and Hispanic or Latino Ethnicity"
+col_name     <- "median_weekly_earnings_cert_only"
+
+# Add a race column so Women rows know their race
+sec <- combined_data[combined_data$section == section_name, ]
+
+is_race_row <- !(sec$characteristic %in% c("Men", "Women")) #the exclamation mark is what makes it the race row, it essentially negates it 
+
+sec$race <- sub(", 16 years and over", "",
+                sec$characteristic[is_race_row][cumsum(is_race_row)]) #so this is picking the original race row and then adding a cumulative sum to it, and then it's just getting rid of 16 years and over because everyone is 16 years and over
+
+White <- sec[sec$race == "White" &
+             sec$characteristic == "Women", ] #race is the new column while characteristics still stay the same 
+
+Black <- sec[sec$race == "Black or African American" &
+             sec$characteristic == "Women", ]
+
+Asian <- sec[sec$race == "Asian" &
+             sec$characteristic == "Women", ]
+
+Hispanic_Latino <- sec[sec$race == "Hispanic or Latino Ethnicity" &
+                       sec$characteristic == "Women", ]
+
+nrow(White); nrow(Black); nrow(Asian); nrow(Hispanic_Latino)  # each = number of years
+
+plot(White$year, White[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White[[col_name]],
+                    Black[[col_name]],
+                    Asian[[col_name]],
+                    Hispanic_Latino[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Women's Earnings With a Certification\nby Race/Ethnicity, 2015-2025")
+
+lines(Black$year, Black[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian$year, Asian[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White women", "Black women", "Asian women", "Hispanic or Latino women"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
+       cex = 0.8)
+
+#now comparing women but now white women don't have a certification 
+
+plot(White$year, White$median_weekly_earnings_without_cert_or_license,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White[[col_name]],
+                    Black[[col_name]],
+                    Asian[[col_name]],
+                    Hispanic_Latino[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "White Women (No Cert) vs. Women of Color (Certified)\n2015-2025")
+
+lines(Black$year, Black[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian$year, Asian[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White women", "Black women", "Asian women", "Hispanic or Latino women"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
+       cex = 0.8)
+
+#creating a graph comparing men/race 
+White_men <- sec[sec$race == "White" &
+             sec$characteristic == "Men", ] #race is the new column while characteristics still stay the same 
+
+Black_men <- sec[sec$race == "Black or African American" &
+             sec$characteristic == "Men", ]
+
+Asian_men <- sec[sec$race == "Asian" &
+             sec$characteristic == "Men", ]
+
+Hispanic_Latino_men <- sec[sec$race == "Hispanic or Latino Ethnicity" &
+                       sec$characteristic == "Men", ]
+
+plot(White_men$year, White_men[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White_men[[col_name]],
+                    Black_men[[col_name]],
+                    Asian_men[[col_name]],
+                    Hispanic_Latino_men[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Men's Earnings With a Certification\nby Race/Ethnicity, 2015-2025")
+
+lines(Black_men$year, Black_men[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian_men$year, Asian_men[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino_men$year, Hispanic_Latino_men[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White Men", "Black Men", "Asian Men", "Hispanic or Latino Men"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
+       cex = 0.8)
+  
+#where only white men don't have a certification
+
+plot(White_men$year, White_men$median_weekly_earnings_without_cert_or_license,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White_men[[col_name]],
+                    Black_men[[col_name]],
+                    Asian_men[[col_name]],
+                    Hispanic_Latino_men[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "White Men (No Cert) vs. Men of Color (Certified)\n2015-2025")
+
+lines(Black_men$year, Black_men[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian_men$year, Asian_men[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino_men$year, Hispanic_Latino_men[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White Men", "Black Men", "Asian Men", "Hispanic or Latino Men"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
+       cex = 0.8)
+  
+#education related graphs will be below 
+
+section_name <- "Educational Attainment"
+col_name     <- "median_weekly_earnings_cert_only"
+
+# Add a race column so Women rows know their race
+sec <- combined_data[combined_data$section == section_name, ]
+
+is_race_row <- !(sec$characteristic %in% c("Men", "Women")) #the exclamation mark is what makes it the race row, it essentially negates it 
+
+sec$race <- sub(", 16 years and over", "",
+                sec$characteristic[is_race_row][cumsum(is_race_row)]) #so this is picking the original race row and then adding a cumulative sum to it, and then it's just getting rid of 16 years and over because everyone is 16 years and over
+
+White <- sec[sec$race == "White" &
+             sec$characteristic == "Women", ] #race is the new column while characteristics still stay the same 
+
+Black <- sec[sec$race == "Black or African American" &
+             sec$characteristic == "Women", ]
+
+Asian <- sec[sec$race == "Asian" &
+             sec$characteristic == "Women", ]
+
+Hispanic_Latino <- sec[sec$race == "Hispanic or Latino Ethnicity" &
+                       sec$characteristic == "Women", ]
+
+nrow(White); nrow(Black); nrow(Asian); nrow(Hispanic_Latino)  # each = number of years
+
+plot(White$year, White[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White[[col_name]],
+                    Black[[col_name]],
+                    Asian[[col_name]],
+                    Hispanic_Latino[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Women's Earnings With a Certification\nby Race/Ethnicity, 2015-2025")
+
+lines(Black$year, Black[[col_name]],
+      type = "o", col = "purple", pch = 16, lwd = 2)
+
+lines(Asian$year, Asian[[col_name]],
+      type = "o", col = "darkgreen", pch = 16, lwd = 2)
+
+lines(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+      type = "o", col = "orange", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("White women", "Black women", "Asian women", "Hispanic or Latino women"),
+       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
+       cex = 0.8)
+
+#I wanna create multiple graphs that compare women and men of different races 
+
+plot(White$year, White[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White[[col_name]],
+                    White_men[[col_name]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Earnings With a Certification\nWhite Women vs. White Men, 2015-2025")
+
+lines(White_men$year, White_men[[col_name]],
+      type = "o", col = "red", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("White Men", "White Women"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#now this is showing if white men don't have a certification 
+
+plot(White$year, White[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(White[[col_name]],
+                    White_men$median_weekly_earnings_without_cert_or_license),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Weekly Earnings: Certified White Women vs. White Men")
+
+lines(White_men$year, White_men$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "red", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("White Women (With Certification)", "White Men (Without Certification)"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#I want to compare black men and women now 
+plot(Black$year, Black[[col_name]],
+     type = "o", col = "red", pch = 16, lwd = 2,
+     ylim = range(c(Black[[col_name]], Black_men[[col_name]]), na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Earnings With a Certification\nBlack Women vs. Black Men, 2015-2025")
+
+lines(Black_men$year, Black_men[[col_name]],
+      type = "o", col = "blue", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("Black Women", "Black Men"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#black men without a certification 
+plot(Black$year, Black[[col_name]],
+     type = "o", col = "red", pch = 16, lwd = 2,
+     ylim = range(c(Black[[col_name]],
+                    Black_men$median_weekly_earnings_without_cert_or_license),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Weekly Earnings: Certified Black Women vs. Black Men")
+
+lines(Black_men$year, Black_men$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "blue", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("Black Women (With Certification)", "Black Men (Without Certification)"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#I need to see the relationship between black men with and without a certification 
+
+col_name_no_cert <- "median_weekly_earnings_without_cert_or_license"
+
+plot(Black_men$year, Black_men[[col_name]],
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(Black_men[[col_name]], Black_men[[col_name_no_cert]]),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Black Men: With vs. Without a Certification\nMedian Weekly Earnings, 2015-2025")
+
+lines(Black_men$year, Black_men[[col_name_no_cert]],
+      type = "o", col = "red", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("With Certification", "Without Certification"),
+       col = c("blue", "red"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#comparing asian women and men
+plot(Asian$year, Asian[[col_name]],
+     type = "o", col = "red", pch = 16, lwd = 2,
+     ylim = range(c(Asian[[col_name]], Asian_men[[col_name]]), na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Earnings With a Certification\nAsian Women vs. Asian Men, 2015-2025")
+
+lines(Asian_men$year, Asian_men[[col_name]],
+      type = "o", col = "blue", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("Asian Women", "Asian Men"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#comparing asian women and asian men (men don't have a cert)
+
+plot(Asian$year, Asian[[col_name]],
+     type = "o", col = "red", pch = 16, lwd = 2,
+     ylim = range(c(Asian[[col_name]],
+                    Asian_men$median_weekly_earnings_without_cert_or_license),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Weekly Earnings: Certified Asian Women vs. Asian Men")
+
+lines(Asian_men$year, Asian_men$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "blue", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("Asian Women (With Certification)", "Asian Men (Without Certification)"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#comparing hispanic women and men
+plot(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+     type = "o", col = "red", pch = 16, lwd = 2,
+     ylim = range(c(Hispanic_Latino[[col_name]], Hispanic_Latino_men[[col_name]]), na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Earnings With a Certification\nHispanic/Latino Women vs. Hispanic/Latino Men, 2015-2025")
+
+lines(Hispanic_Latino_men$year, Hispanic_Latino_men[[col_name]],
+      type = "o", col = "blue", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("Hispanic/Latino Women", "Hispanic/Latino Men"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+
+#comparing hispanic women and men (men don't have a certification)
+plot(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
+     type = "o", col = "red", pch = 16, lwd = 2,
+     ylim = range(c(Hispanic_Latino[[col_name]],
+                    Hispanic_Latino_men$median_weekly_earnings_without_cert_or_license),
+                  na.rm = TRUE),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Weekly Earnings: Certified Hispanic/Latino Women vs. Men")
+
+lines(Hispanic_Latino_men$year, Hispanic_Latino_men$median_weekly_earnings_without_cert_or_license,
+      type = "o", col = "blue", pch = 17, lwd = 2)
+
+legend("topleft",
+       legend = c("Hispanic/Latino Women (With Certification)", "Hispanic/Latino Men (Without Certification)"),
+       col = c("red", "blue"),
+       pch = c(16, 17), lwd = 2, bty = "n")
+```
+
+```{r}
+#License Graphs
+
+plot(trend_men$year, trend_men$median_weekly_earnings_cert_only,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(trend_men$median_weekly_earnings_cert_only,
+                     trend_men$median_weekly_earnings_with_license)),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Median Weekly Earnings for Men (Cert vs License), 2015–2025")
+
+lines(trend_men$year, trend_men$median_weekly_earnings_with_license,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("With a Certification", "With a License"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+#graph for women
+trend_women <- combined_data[combined_data$section == "Age and Sex" &
+                   combined_data$characteristic == "Women, 16 years and over", ]
+
+plot(trend_women$year, trend_women$median_weekly_earnings_cert_only,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(trend_women$median_weekly_earnings_cert_only,
+                     trend_women$median_weekly_earnings_with_license)),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Median Weekly Earnings for Women (Cert vs License), 2015–2025")
+
+lines(trend_women$year, trend_women$median_weekly_earnings_with_license,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("With a Certification", "With a License"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+#men vs women with a license 
+plot(trend_women$year, trend_women$median_weekly_earnings_with_license,
+     type = "o", col = "blue", pch = 16, lwd = 2,
+     ylim = range(c(trend_women$median_weekly_earnings_with_license,
+                     trend_men$median_weekly_earnings_with_license)),
+     xlab = "Year", ylab = "Median Weekly Earnings ($)",
+     main = "Median Weekly Earnings for Men vs Women (with a license), 2015–2025")
+
+lines(trend_men$year, trend_men$median_weekly_earnings_with_license,
+      type = "o", col = "red", pch = 16, lwd = 2)
+
+legend("topleft",
+       legend = c("Women", "Men"),
+       col = c("blue", "red"), lwd = 2, pch = 16)
+
+
 
 
