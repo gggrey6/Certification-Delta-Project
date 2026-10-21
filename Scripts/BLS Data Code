@@ -46,7 +46,7 @@ cor(trend$year, trend$earnings_gap)
 model <- lm(earnings_gap ~ year, data = trend)
 summary(model)
 
-Everything from Line 49 to line 566 will be code that is specifically focused on the LinkedIn Series. It looks like a lot but it's just me using the same variation of code to make a lot of graphs 
+Everything from Line 49 to line 517 will be code that is specifically focused on the LinkedIn Series. It looks like a lot but it's just me using the same variation of code to make a lot of graphs 
 
 #this is me creating graphs for the gender graph LinkedIn Series# 
 
@@ -89,7 +89,6 @@ legend("topleft",
        legend = c("Men", "Women"),
        col = c("blue", "red"), lwd = 2, pch = 16)
 
-
 #this is a graph of men who don't have a certification and women who have a certification
 plot(men$year, men$median_weekly_earnings_without_cert_or_license,
      type = "o", col = "blue", pch = 16, lwd = 2,
@@ -105,7 +104,6 @@ lines(women$year, women$median_weekly_earnings_cert_only,
 legend("topleft",
        legend = c("Men", "Women"),
        col = c("blue", "red"), lwd = 2, pch = 16)
-
 
 #this is the start of me making graphs related to race 
 
@@ -313,56 +311,7 @@ legend("topleft",
        col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
        cex = 0.8)
   
-#education related graphs will be below 
 
-section_name <- "Educational Attainment"
-col_name     <- "median_weekly_earnings_cert_only"
-
-# Add a race column so Women rows know their race
-sec <- combined_data[combined_data$section == section_name, ]
-
-is_race_row <- !(sec$characteristic %in% c("Men", "Women")) #the exclamation mark is what makes it the race row, it essentially negates it 
-
-sec$race <- sub(", 16 years and over", "",
-                sec$characteristic[is_race_row][cumsum(is_race_row)]) #so this is picking the original race row and then adding a cumulative sum to it, and then it's just getting rid of 16 years and over because everyone is 16 years and over
-
-White <- sec[sec$race == "White" &
-             sec$characteristic == "Women", ] #race is the new column while characteristics still stay the same 
-
-Black <- sec[sec$race == "Black or African American" &
-             sec$characteristic == "Women", ]
-
-Asian <- sec[sec$race == "Asian" &
-             sec$characteristic == "Women", ]
-
-Hispanic_Latino <- sec[sec$race == "Hispanic or Latino Ethnicity" &
-                       sec$characteristic == "Women", ]
-
-nrow(White); nrow(Black); nrow(Asian); nrow(Hispanic_Latino)  # each = number of years
-
-plot(White$year, White[[col_name]],
-     type = "o", col = "blue", pch = 16, lwd = 2,
-     ylim = range(c(White[[col_name]],
-                    Black[[col_name]],
-                    Asian[[col_name]],
-                    Hispanic_Latino[[col_name]]),
-                  na.rm = TRUE),
-     xlab = "Year", ylab = "Median Weekly Earnings ($)",
-     main = "Women's Earnings With a Certification\nby Race/Ethnicity, 2015-2025")
-
-lines(Black$year, Black[[col_name]],
-      type = "o", col = "purple", pch = 16, lwd = 2)
-
-lines(Asian$year, Asian[[col_name]],
-      type = "o", col = "darkgreen", pch = 16, lwd = 2)
-
-lines(Hispanic_Latino$year, Hispanic_Latino[[col_name]],
-      type = "o", col = "orange", pch = 16, lwd = 2)
-
-legend("topleft",
-       legend = c("White women", "Black women", "Asian women", "Hispanic or Latino women"),
-       col = c("blue", "purple", "darkgreen", "orange"), lwd = 2, pch = 16,
-       cex = 0.8)
 
 #I wanna create multiple graphs that compare women and men of different races 
 
